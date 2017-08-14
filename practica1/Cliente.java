@@ -16,6 +16,13 @@ public class Cliente {
         margen = 0;
     }
 
+    public String findPropertyPrice(double pvalue){
+        if (pvalue == this.pvalue) {
+            return address;
+        }
+        return null;
+    }
+
     public String findNameMarg(double margen){
         if (margen == this.margen) {
         	return name;

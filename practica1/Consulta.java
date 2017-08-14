@@ -53,14 +53,24 @@ public class Consulta {
           System.out.println("\nPropiedades con menos de 200m2 y valen entre $50,000 y $500,000:\n"+counter+"\n");
 
           Collections.sort(prices);
-          System.out.println("Las 10 propiedades más baratas.");
-          for (int i = 0; i < 10 ;i++ ) {
-          	System.out.println(prices.get(i));
+          System.out.println("Las 10 propiedades más baratas:");
+          for (int l = 0; l<margen.size() ;l++ ) {
+            for (int i = 0; i < 10 ;i++ ) {
+              if (margen.get(l).findPropertyPrice((double)prices.get(i)) != null) {
+                System.out.println("Valor: $"+prices.get(i));
+                System.out.println(margen.get(l).findPropertyPrice((double)prices.get(i)));
+              }
+            }
           }
 
           System.out.println("\nLas 5 propiedades más caras.");
-          for (int i = prices.size() -1; i > prices.size() - 6 ; i-- ) {
-          	System.out.println(prices.get(i));
+          for (int l = 0; l<margen.size() ;l++ ) {
+            for (int i = prices.size() -1; i > prices.size() - 6 ; i-- ) {
+              if (margen.get(l).findPropertyPrice((double)prices.get(i)) != null) {
+                System.out.println("Valor: $"+prices.get(i));
+                System.out.println(margen.get(l).findPropertyPrice((double)prices.get(i)));
+              }
+            }
           }
 
           Collections.sort(marta);
